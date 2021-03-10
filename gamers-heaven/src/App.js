@@ -1,9 +1,13 @@
 import React from 'react'
+import Head from './Components/Header'
+import Foot from './Components/Footer'
 
 const App=()=> {
   return (
-    <div className="App">
-      <h1>Welcome to GamerS HeaveNs</h1>
+    <div>
+      <Head />
+      <h1>Welcome to GamerS HeaveN</h1>
+      <Foot />
     </div>
   );
 }
