@@ -17,12 +17,12 @@ const ProductScreen = ({ match }) => {
             </Col>
             <Col md={3}>
                 <ListGroup variant='flush'>
-                    {/*flush variant takes away the spacing */}
+                    {/*flush variant takes away the border */}
                     <ListGroupItem>
                         <h3>{product.name}</h3>
                     </ListGroupItem>
                     <ListGroupItem>
-                        <Rating value = {product.rating} text={`${product.numReviews} reviews`} />
+                        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                     </ListGroupItem>
                     <ListGroupItem>
                         Price: ${product.price}
@@ -33,33 +33,35 @@ const ProductScreen = ({ match }) => {
                 </ListGroup>
             </Col>
             <Col md={3}>
-                <ListGroupItem variant='flush'>
-                    {/*flush variant takes away the spacing */}
-                    <ListGroupItem>
-                        <Row>
-                            <Col>
-                                Price:
+                <Card>
+                    <ListGroupItem variant='flush'>
+                        {/*flush variant takes away the spacing */}
+                        <ListGroupItem>
+                            <Row>
+                                <Col>
+                                    Price:
                             </Col>
-                            <Col>
-                                <strong>${product.price}</strong>
+                                <Col>
+                                    <strong>${product.price}</strong>
+                                </Col>
+                            </Row>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                            <Row>
+                                <Col>
+                                    Status:
                             </Col>
-                        </Row>
+                                <Col>
+                                    {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                                </Col>
+                            </Row>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                            <Button className='btn-block' type='button' disabled={product.countInStock === 0}>Add To Cart</Button>
+                        </ListGroupItem>
+
                     </ListGroupItem>
-                    <ListGroupItem>
-                        <Row>
-                            <Col>
-                                Status:
-                            </Col>
-                            <Col>
-                                {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
-                            </Col>
-                        </Row>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                        <Button className='btn-block' type='button' disabled={product.countInStock === 0}>Add To Cart</Button>
-                    </ListGroupItem>
-                    
-                </ListGroupItem>
+                </Card>
             </Col>
         </Row>
     </>
