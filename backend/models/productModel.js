@@ -18,6 +18,8 @@ const reviewSchema = mongoose.Schema({
 })
 
 const productSchema = mongoose.Schema({
+    // this user object property is a relation between user model and product model.
+    //It is used to track which user has created a new product
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
@@ -67,7 +69,7 @@ const productSchema = mongoose.Schema({
     }
 
 }, {
-    timestamps: true
+    timestamps: true // to automatically create two fields created at and updated at
 })
 
 const Product = mongoose.model('Product', productSchema)

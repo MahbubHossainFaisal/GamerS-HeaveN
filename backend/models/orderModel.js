@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 
 const orderSchema = mongoose.Schema({
+     // this user object property is a relation between user model and order model.
+    //It is used to track which user has created a new product
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
@@ -13,6 +15,7 @@ const orderSchema = mongoose.Schema({
             qty: { type: Number, required: true },
             image: { type: String, required: true },
             price: { type: Number, required: true },
+            //this product property will be a relation between productmodel and orderitems
             product: {
                 type: mongoose.Schema.Types.ObjectId,
                 required: true,
