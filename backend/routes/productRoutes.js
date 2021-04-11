@@ -19,7 +19,7 @@ router.get('/', asyncHandler(async (req, res) => {
 //@route: GET /api/products/:id
 //@acess: Public route
 
-router.get('/:id',asyncHandler( async (req, res) => {
+router.get('/:id', asyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id)
 
     if (product) {
@@ -27,7 +27,7 @@ router.get('/:id',asyncHandler( async (req, res) => {
     } else {
         res.status(404)
         throw new Error('Product Not Found')
-    
+
     }
 }))
 
