@@ -9,11 +9,11 @@ const reducer = combineReducers({
     productDetails: productDetailsReducer,
 })
 
-const initiaState = {}
+const initialState = {}
 
 const middleware = [thunk]
 
-const store = createStore(reducer, initiaState,
+const store = createStore(reducer, initialState,
     composeWithDevTools(applyMiddleware(...middleware)))
 
 export default store
