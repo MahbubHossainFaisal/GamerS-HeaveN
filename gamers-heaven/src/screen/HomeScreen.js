@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 import Product from '../Components/Product'
 import Message from '../Components/Message'
 import Loader from '../Components/Loader'
-import { listProducts } from '../actions/productActions'
+import { listProducts } from '../Components/actions/productActions'
 
 
 const HomeScreen = () => {
